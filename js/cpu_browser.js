@@ -55,7 +55,7 @@ function create_items() {
 	// clear items
 	cpu_items = [];
 
-	load_url(location.search.substring(3));
+	load_url(location.search.substring(1));
 
 	for (var i = 0; i < database.length; i++) {
 		cpu_items[i] = new cpu_item(database[i]);
@@ -104,6 +104,18 @@ function export_current() {
 
 function load_url(data) {
 	if (data.length > 0) {
+		data = data.split("&");
+		var argument_found = false;
+		for (var i = 0; i < data.length; i++) {
+			if (data[i].substring(0, 2) == "a=") {
+				data = data[i].substring(2);
+				argument_found = true;
+				break;
+			}
+		}
+		if (!argument_found) {
+			return;
+		}
 		var load_obj = JSON.parse(atob(data));
 
 		//search
