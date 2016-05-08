@@ -137,5 +137,8 @@ function cpu_item(database_entry) {
 	}
 
 	var annotation = $("<textarea>", {class: "item_annotation", placeholder: "Add thoughts here"});
+	if (database_entry.annotation) {
+		annotation[0].value = database_entry.annotation;
+	}
 	$(this.page_div).append(annotation);
 }

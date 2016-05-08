@@ -55,12 +55,14 @@ function create_items() {
 	// clear items
 	cpu_items = [];
 
+	load_url(location.search.substring(3));
+
 	for (var i = 0; i < database.length; i++) {
 		cpu_items[i] = new cpu_item(database[i]);
 	}
 
-	load_url(location.search.substring(3));
 	sort_items();
+	search_filter();
 }
 
 var export_dialog = $("<div>", {id: "export_dialog"});
@@ -89,7 +91,10 @@ function export_current() {
 	current_obj.sort = $("#sort_dropdown")[0].selectedIndex;
 
 	// annotations
-
+	current_obj.annotations = [];
+	for (var i = 0; i < cpu_items.length; i++) {
+		current_obj.annotations[cpu_items[i].database_entry.database_id] = cpu_items[i].page_div.find(".item_annotation")[0].value;
+	}
 
 	// string to add to url for sharing/saving
 	var current_string = btoa(JSON.stringify(current_obj));
@@ -121,6 +126,11 @@ function load_url(data) {
 		$("#sort_dropdown")[0].selectedIndex = load_obj.sort;
 
 		// annotations
+		for (var i = 0; i < load_obj.annotations.length; i++) {
+			if (load_obj.annotations[i]) {
+				database[i].annotation = load_obj.annotations[i];
+			}
+		}
 	}
 }
 
