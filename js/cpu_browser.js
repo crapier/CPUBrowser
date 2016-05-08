@@ -75,10 +75,12 @@ function export_current() {
 	current_obj.search = $("#search_box")[0].value;
 
 	// socket filters
+	current_obj.socket_lga2011 = $("#socket_lga2011")[0].checked;
+	current_obj.socket_lga2011v3 = $("#socket_lga2011v3")[0].checked;
 	current_obj.socket_lga1150 = $("#socket_lga1150")[0].checked;
 	current_obj.socket_lga1151 = $("#socket_lga1151")[0].checked;
 	current_obj.socket_lga1155 = $("#socket_lga1155")[0].checked;
-	current_obj.socket_lga1366 = $("#socket_lga1366")[0].checked;
+	current_obj.socket_amd3p = $("#socket_amd3p")[0].checked;
 
 	// brand filters
 	current_obj.brand_intel = $("#brand_intel")[0].checked;
@@ -122,10 +124,12 @@ function load_url(data) {
 		$("#search_box")[0].value = load_obj.search;
 
 		// socket filters
+		$("#socket_lga2011")[0].checked = load_obj.socket_lga2011;
+		$("#socket_lga2011v3")[0].checked = load_obj.socket_lga2011v3;
 		$("#socket_lga1150")[0].checked = load_obj.socket_lga1150;
 		$("#socket_lga1151")[0].checked = load_obj.socket_lga1151;
 		$("#socket_lga1155")[0].checked = load_obj.socket_lga1155;
-		$("#socket_lga1366")[0].checked = load_obj.socket_lga1366;
+		$("#socket_amd3p")[0].checked = load_obj.socket_amd3p;
 
 		// brand filters
 		$("#brand_intel")[0].checked = load_obj.brand_intel;

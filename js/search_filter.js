@@ -25,6 +25,19 @@ function search_filter() {
 		// filter out non socket matches
 		var num_sockets_checked = 0;
 		var socket_match_found = false;
+		if ($("#socket_lga2011")[0].checked) {
+			num_sockets_checked++;
+			if (string_equals(cpu_items[i].database_entry.socket, "LGA 2011")) {
+				socket_match_found = true;
+			}
+		}
+
+		if ($("#socket_lga2011v3")[0].checked) {
+			num_sockets_checked++;
+			if (string_equals(cpu_items[i].database_entry.socket, "LGA 2011-v3")) {
+				socket_match_found = true;
+			}
+		}
 		if ($("#socket_lga1150")[0].checked) {
 			num_sockets_checked++;
 			if (string_equals(cpu_items[i].database_entry.socket, "LGA 1150")) {
@@ -45,10 +58,9 @@ function search_filter() {
 				socket_match_found = true;
 			}
 		}
-
-		if ($("#socket_lga1366")[0].checked) {
+		if ($("#socket_amd3p")[0].checked) {
 			num_sockets_checked++;
-			if (string_equals(cpu_items[i].database_entry.socket, "LGA 1366")) {
+			if (string_equals(cpu_items[i].database_entry.socket, "Socket AM3+")) {
 				socket_match_found = true;
 			}
 		}
@@ -98,9 +110,9 @@ $(document).ready(function() {
 	$( "#price_slider" ).slider({
 		range: true,
 		min: 0,
-		max: 2000,
+		max: 1000,
 		step: 5,
-		values: [ 0, 2000 ],
+		values: [ 0, 1000 ],
 		change: slider_handler,
 		slide: slider_handler
 	})

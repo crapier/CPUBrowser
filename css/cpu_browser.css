@@ -216,3 +216,7 @@ div {
 .ui-state-default .ui-icon {
 	    background-image: url("images/ui-icons_888888_256x240.png");
 }
+
+#export_dialog {
+	word-wrap: break-word;
+}
