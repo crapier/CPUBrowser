@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+
+
+<head>
+	<meta charset="utf-8">
+
+	<title>CPU Browser</title>
+	<meta name="description" content="Search and Browse for CPUs Amazon and Newegg with Benchmarks">
+	<meta name="author" content="Clifton Rapier - CSCE 655">
+
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/cpu_browser.css">
+
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+
+
+	<script src="js/bigSemantics/Readyable.js"></script>
+	<script src="js/bigSemantics/BSAutoSwitch.js"></script>
+	<script src="js/bigSemantics/BSService.js"></script>
+	<script src="js/bigSemantics/BSExtension.js"></script>
+	<script src="js/bigSemantics/BSUtils.js"></script>
+	<script src="js/bigSemantics/ParsedURL.js"></script>
+	<script src="js/bigSemantics/Downloader.js"></script>
+	<script src="js/bigSemantics/simplBase.js"></script>
+	<script src="js/bigSemantics/RepoMan.js"></script>
+	<script src="js/bigSemanticsFunctions.js"></script>
+
+
+	<script src="js/cpu_database.js"></script>
+	<script src="js/cpu_item.js"></script>
+	<script src="js/search_filter.js"></script>
+	<script src="js/resizing.js"></script>
+	<script src="js/cpu_browser.js"></script>
+
+</head>
+
+
+
+<body>
+	<div id="page_content">
+		<div id="top_bar">
+			<img src="img/cpu_icon.png" id="title_icon">
+			<div id="page_title">CPU Browser</div>
+			<input id="search_box" type="text" placeholder="Search"/>
+
+			<select id="sort_dropdown">
+			  <option value="benchmark_hi_lo">Sort by Benchmark High to Low</option>
+			  <option value="benchmark_lo_hi">Sort by Benchmark Low to High</option>
+			  <option value="price_hi_lo">Sort by Price High to Low</option>
+			  <option value="price_lo_hi">Sort by Price Low to High</option>
+			  <option value="rating_hi_lo">Sort by Rating High to Low</option>
+			  <option value="rating_lo_hi">Sort by Rating Low to High</option>
+			</select>
+
+			<img src="img/share_icon.png" id="share_url_icon">
+		</div>
+		<div id="bottom_area">
+			<div id="side_bar">
+				<div class="filter_title">Socket Type</div>
+
+				<input id="socket_lga1150" type="checkbox" class="filter_option filter_function"> LGA 1150<br>
+				<input id="socket_lga1151" type="checkbox" class="filter_option filter_function"> LGA 1151<br>
+				<input id="socket_lga1155" type="checkbox" class="filter_option filter_function"> LGA 1155<br>
+				<input id="socket_lga1366" type="checkbox" class="filter_option filter_function"> LGA 1366<br>
+
+				<div class="filter_title">Brand</div>
+
+				<input id="brand_intel" type="checkbox" class="filter_option filter_function"> Intel<br>
+				<input id="brand_amd" type="checkbox" class="filter_option filter_function"> AMD<br>
+
+				<div class="filter_title">Price</div>
+				<div id="price_slider"></div>
+				<div id="current_price_range" class="filter_option">$0 - $2000</div>
+			</div>
+			<div id="list_area"></div>
+		</div>
+	</div>
+</body>
+
+
+</html>
