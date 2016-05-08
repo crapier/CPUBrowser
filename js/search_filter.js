@@ -118,5 +118,5 @@ $(document).ready(function() {
 	})
 
 	$(".filter_function").click(search_filter);
-	$("#search_box").keydown(search_filter);
+	$("#search_box").keyup(search_filter);
 });
