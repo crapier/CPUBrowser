@@ -108,7 +108,9 @@ div {
 .list_item {
 	position: relative;
 	height: 200px;
-	background-color: #505050;
+	background-color: #ffffff;
+	border-bottom: 1px solid #999999;
+	color: #737373;
 	margin: 25px;
 	min-width: 1000px;
 
@@ -171,6 +173,8 @@ div {
 	top: 10px;
 	right: 230px;
 	font-size: 60px;
+	text-decoration: underline;
+	color: #7373ff;
 }
 
 .item_price_min:hover {
@@ -182,6 +186,8 @@ div {
 	position: absolute;
 	right: 230px;
 	font-size: 15px;
+
+	text-decoration: underline;
 }
 
 .item_price_site:hover {
@@ -204,8 +210,10 @@ div {
 	top: 10px;
 	right: 10px;
 
-	width: 200px;
+	width: 184px;
 	height: 170px;
+
+	padding: 4px 8px 4px 8px;
 }
 
 .ui-widget-header {
